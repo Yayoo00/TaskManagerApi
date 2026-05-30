@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 // SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=tareas.db"));
+    
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
