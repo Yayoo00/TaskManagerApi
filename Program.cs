@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagerApi.Data;
+using TaskManagerApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=tareas.db"));
     
 builder.Services.AddHttpClient();
+
+builder.Services.AddSingleton<SentimientoService>();
 
 var app = builder.Build();
 
